@@ -1,0 +1,199 @@
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+@import url('https://fuzz-ui.netlify.app/styles/FuzzUI.css');
+
+:root {
+	--body-bg-light: #f1f5f9;
+	--body-bg: #e2e8f0;
+	--main-container-bg: #eff6ff;
+	--wrong-bg: #fee2e2;
+	--color-icon: #60a5fa;
+
+	--color-brand-light: #ffedd5;
+	--color-brand: #f97316;
+
+	--border-light: 2px solid var(--color-primary-light);
+}
+
+* {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	transition: all 0.3s;
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+}
+
+.main-body {
+	background-color: #60a5fa;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+// ------------------------->
+
+.sidebar {
+	background-color: white;
+	width: 20rem;
+	max-height: 100%;
+	border-radius: 1rem;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+
+.routeContainer {
+	padding: 1.3rem 2rem;
+	background-color: #f8f9fa;
+	flex: 1;
+	max-height: 100%;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+
+// ------------------------->
+
+.navigation {
+	width: 100%;
+	height: 6.5rem;
+	border-radius: 1rem;
+}
+
+.navigation-hovered {
+	width: 100%;
+	height: 6.5rem;
+	border-radius: 1.5rem;
+
+	transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+	position: sticky;
+	z-index: 1100;
+	left: auto;
+	right: 0px;
+	box-shadow: rgba(255, 255, 255, 0.9) 0rem 0rem 0.0625rem 0.0625rem inset,
+		rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem;
+	backdrop-filter: saturate(200%) blur(1.875rem);
+	background-color: rgba(255, 255, 255, 0.8);
+	color: rgb(52, 71, 103);
+	top: 0rem;
+
+	&__search {
+		height: 3.2rem;
+		padding: 0.8rem 1.5rem;
+		border-radius: 1.6rem;
+		border: 1px solid gray;
+		outline-style: none;
+		background-color: #fafafa;
+	}
+}
+
+.navigation-img {
+	width: 5rem;
+}
+
+// --------------------> listItem
+
+.list-item {
+	padding: 1rem;
+	border-radius: 0.8rem;
+	box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.04), -0.5px -0.5px 20px rgba(0, 0, 0, 0.04);
+	overflow: hidden;
+
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 3rem;
+		height: 3rem;
+		font-size: 1.4rem;
+		color: white;
+		background-color: #60a5fa;
+		padding: 0.7rem;
+		border-radius: 0.7rem;
+		cursor: pointer;
+	}
+
+	&__headerIcon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 3rem;
+		height: 3rem;
+		font-size: 1.8rem;
+		color: black;
+		padding: 0.7rem;
+		border-radius: 0.7rem;
+		cursor: pointer;
+	}
+}
+
+.hr {
+	color: red;
+}
+
+// -------------------->
+
+.productCategory {
+	background-color: white;
+	padding: 1rem;
+	border-radius: 0.8rem;
+
+	&-image {
+		height: 11rem;
+	}
+
+	&-brand {
+		font-size: 1.3rem;
+	}
+}
+
+.product-banner {
+	width: 100%;
+	height: 40rem;
+	object-fit: cover;
+	border-radius: 1rem;
+}
+
+.productCard {
+	background-color: white;
+	width: 22rem;
+	min-width: 22rem;
+	height: 15rem;
+	height: auto;
+	border-radius: 1rem;
+	display: flex;
+	justify-content: center;
+
+	&-section1 {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	&-section2 {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&-image {
+		height: 11rem;
+	}
+
+	&-rating {
+		font-size: 1.2rem;
+		color: rgb(235, 189, 41);
+	}
+
+	&-details {
+		&__brand {
+			font-size: 1.2rem;
+		}
+
+		&__bullet {
+			font-size: 1.4rem;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+}

@@ -1,5 +1,13 @@
-import './App.css';
+import './assets/styles/app.scss';
+import { Sidebar, RouteContainer } from './components/container';
 
-const App = () => <div className='App'>ShopUp FullStack</div>;
+const App = () => {
+	return (
+		<main className='main-body flex-row'>
+			<Sidebar />
+			<RouteContainer />
+		</main>
+	);
+};
 
 export default App;
