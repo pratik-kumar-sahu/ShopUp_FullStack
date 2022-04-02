@@ -1,14 +1,21 @@
 import { FontAwesomeIcon } from './fontAwesomeIcon';
 
-export const ProductCard = () => {
+export const ProductCard = (props) => {
+	const { name, description, image, brandName, mrp, currentPrice, ratings } = props.product;
+
+	const splitInBullets = (description) => {
+		const split = description.split(',');
+		return split.map((desc, index) => (
+			<div key={index} className='productCard-details__bullet'>
+				&bull; {desc}
+			</div>
+		));
+	};
+
 	return (
-		<div className='productCard flex-column overflow'>
+		<div className='productCard flex-column overflow m-5'>
 			<div className='productCard-section1 mt-2'>
-				<img
-					className='productCard-image cursor mr-5 mb-2'
-					src='https://rukminim1.flixcart.com/image/312/312/kg8avm80/mobile/r/2/r/apple-iphone-12-mini-dummyapplefsn-original-imafwgbfcswp9fh5.jpeg?q=70'
-					alt='mobile'
-				/>
+				<img className='productCard-image cursor mr-5 mb-2' src={image} alt='mobile' />
 				<div className='productCard-section2'>
 					<div>
 						<div>
@@ -19,32 +26,26 @@ export const ProductCard = () => {
 								iconStyle={'fas fa-star-half-alt productCard-rating'}
 							/>
 							<FontAwesomeIcon iconStyle={'far fa-star productCard-rating'} />
-							<span className='productCard-rating mx-2'>3.5</span>
+							<span className='productCard-rating mx-2'>{ratings}</span>
 						</div>
-						<div style={{ fontWeight: 'bolder' }}>₹ 52990/-</div>
+						<div style={{ fontWeight: 'bolder' }}>₹ {currentPrice}/-</div>
 						<div
 							style={{
 								textDecoration: 'line-through',
 								fontSize: '1.4rem'
 							}}
 						>
-							₹ 60990/-
+							₹ {mrp}/-
 						</div>
 					</div>
-					{/* <div className='mb-2'>
-						<FontAwesomeIcon iconStyle={'far fa-heart mr-2'} />
-						<FontAwesomeIcon iconStyle={'fas fa-shopping-cart'} />
-					</div> */}
 				</div>
 			</div>
 			<div className='productCard-details mt-2'>
-				<p className='productCard-details__brand'>Apple</p>
-				<h4>Iphone 12 Mini</h4>
-				<div className='productCard-details__bullet'>&bull; Fastest 5G Smartphone</div>
-				<div className='productCard-details__bullet'>&bull; A14 Bionic Chip</div>
-				<div className='productCard-details__bullet'>
-					&bull; Wireless Charging With MagSafe
-				</div>
+				<p className='productCard-details__brand'>{brandName}</p>
+				<h4 title={name} className='productCard-details__name'>
+					{name}
+				</h4>
+				{splitInBullets(description)}
 			</div>
 			<div className='tags tags-bottom flex-row'>
 				<div className='wish flex-j-a-center cursor'>WishList</div>

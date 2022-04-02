@@ -1,12 +1,10 @@
-export const ProductCategory = () => {
+export const ProductCategory = (props) => {
+	const { brandName, image } = props.category;
+
 	return (
-		<div className='productCategory flex-j-a-center-column cursor'>
-			<img
-				className='productCategory-image my-2'
-				src='https://rukminim1.flixcart.com/image/312/312/kyeqjrk0/mobile/u/0/8/-original-imagan9qhw9nyhce.jpeg?q=70'
-				alt='mobile'
-			/>
-			<p className='productCategory-brand'>Redmi</p>
+		<div className='productCategory flex-j-a-center-column cursor m-5'>
+			<img className='productCategory-image my-2' src={image} alt={brandName} />
+			<p className='productCategory-brand'>{brandName}</p>
 		</div>
 	);
 };

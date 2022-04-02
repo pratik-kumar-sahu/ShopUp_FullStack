@@ -144,9 +144,9 @@ body {
 .productCategory {
 	background-color: var(--color-white);
 	padding: 2rem;
-	margin-right: 2rem;
 	border-radius: 0.8rem;
 	border: 1px solid var(--gray);
+	align-self: center;
 
 	&:hover {
 		box-shadow: rgba(255, 255, 255, 0.9) 0rem 0rem 0.0625rem 0.0625rem inset,
@@ -179,7 +179,6 @@ body {
 	border-radius: 1rem;
 	display: flex;
 	justify-content: center;
-	margin-right: 2rem;
 	padding: 3.7rem 2rem;
 	position: relative;
 	border: 1px solid var(--gray);
@@ -203,6 +202,9 @@ body {
 
 	&-image {
 		height: 11rem;
+		width: 6.5rem;
+		object-fit: contain;
+		overflow: hidden;
 
 		&:hover {
 			transform: scale(1.05);
@@ -219,8 +221,14 @@ body {
 			font-size: 1.2rem;
 		}
 
+		&__name {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
 		&__bullet {
-			font-size: 1.4rem;
+			font-size: 1.3rem;
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
