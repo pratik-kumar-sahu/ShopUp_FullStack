@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer } from 'react';
-import { productAction } from './actions';
+import { stateReducer } from '../reducers';
 
 const StateContext = createContext();
 
@@ -16,17 +16,4 @@ export const StateContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(stateReducer, initialState);
 
 	return <StateContext.Provider value={{ state, dispatch }}>{children}</StateContext.Provider>;
-};
-
-const stateReducer = (state, action) => {
-	switch (action.type) {
-		case productAction.fetchCategories:
-			return { ...state, categories: action.payload };
-
-		case productAction.fetchProducts:
-			return { ...state, products: action.payload };
-
-		default:
-			break;
-	}
 };

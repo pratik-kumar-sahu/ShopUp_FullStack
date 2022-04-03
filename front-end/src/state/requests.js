@@ -1,5 +1,5 @@
-import { productAction } from './contexts/actions';
-import { categoriesApi, productsApi } from './contexts';
+import { productAction } from './actions';
+import { categoriesApi, productsApi } from './apis';
 import axios from 'axios';
 
 export const fetchCategories = async (dispatch) => {
