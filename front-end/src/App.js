@@ -1,7 +1,7 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import './assets/styles/app.scss';
-import { Sidebar, RouteContainer } from './components/container';
+import { Sidebar, RouteContainer } from './components/layout';
 
 const App = () => {
 	return (

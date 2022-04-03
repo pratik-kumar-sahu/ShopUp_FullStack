@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { Home, SignIn, SignUp } from '../routes';
+import { Home, SignIn, SignUp } from '../pages';
 import { Navbar } from '../common';
 
 export const RouteContainer = () => {
