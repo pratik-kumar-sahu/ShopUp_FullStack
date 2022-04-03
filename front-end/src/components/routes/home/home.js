@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { ProductCard, ProductCategory } from '../../common';
 import { fetchCategories, fetchProducts } from '../../../state/requests';
-import { useState } from '../../../state/contexts';
+import { useStateContext } from '../../../state/contexts';
 
 export const Home = () => {
 	const {
 		state: { categories, products },
 		dispatch: productDispatch
-	} = useState();
+	} = useStateContext();
 
 	useEffect(() => {
 		fetchProducts(productDispatch);

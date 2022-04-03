@@ -3,11 +3,11 @@ import { productAction } from './actions';
 
 const StateContext = createContext();
 
-export const useState = () => useContext(StateContext);
+export const useStateContext = () => useContext(StateContext);
 
 export const StateContextProvider = ({ children }) => {
 	const initialState = {
-        categories: [],
+		categories: [],
 		products: [],
 		wishlistedProducts: [],
 		cartProducts: []
