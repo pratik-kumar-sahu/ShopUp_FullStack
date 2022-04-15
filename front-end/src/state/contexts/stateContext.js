@@ -8,9 +8,7 @@ export const useStateContext = () => useContext(StateContext);
 export const StateContextProvider = ({ children }) => {
 	const initialState = {
 		categories: [],
-		products: [],
-		wishlistedProducts: [],
-		cartProducts: []
+		products: []
 	};
 
 	const [state, dispatch] = useReducer(stateReducer, initialState);

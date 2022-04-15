@@ -28,7 +28,8 @@ body {
 }
 
 .main-body {
-	background-color: var(--color-brand);
+	background-color: #e2e8f0;
+	// background-color: var(--color-brand);
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
@@ -38,7 +39,7 @@ body {
 
 .sidebar {
 	background-color: var(--color-white);
-	width: 20rem;
+	width: auto;
 	max-height: 100%;
 	border-radius: 1rem;
 	overflow: hidden;
@@ -46,8 +47,8 @@ body {
 }
 
 .routeContainer {
-	padding: 1.3rem 2rem 1.3rem 0.5rem;
-	background-color: var(--color-brand);
+	padding: 1.3rem 1.5rem;
+	background-color: #e2e8f0;
 	flex: 1;
 	max-height: 100%;
 	overflow: hidden;
@@ -104,7 +105,13 @@ body {
 	align-items: baseline;
 
 	&:hover {
-		box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.04), -0.5px -0.5px 20px rgba(0, 0, 0, 0.04);
+		color: var(--color-black);
+		background-color: #e2e8f0;
+	}
+
+	&-active {
+		color: var(--color-black);
+		background-color: #e2e8f0;
 	}
 
 	&__icon {
@@ -145,13 +152,12 @@ body {
 	background-color: var(--color-white);
 	padding: 2rem;
 	border-radius: 0.8rem;
-	border: 1px solid var(--gray);
+	// border: 1px solid var(--gray);
 	align-self: center;
 
 	&:hover {
 		box-shadow: rgba(255, 255, 255, 0.9) 0rem 0rem 0.0625rem 0.0625rem inset,
 			rgba(0, 0, 0, 0.1) 0rem 1.25rem 1.6875rem 0rem;
-		border: 1px solid var(--color-black);
 	}
 
 	&-image {
@@ -181,12 +187,11 @@ body {
 	justify-content: center;
 	padding: 3.7rem 2rem;
 	position: relative;
-	border: 1px solid var(--gray);
+	// border: 1px solid var(--gray);
 
 	&:hover {
 		box-shadow: rgba(255, 255, 255, 0.9) 0rem 0rem 0.0625rem 0.0625rem inset,
 			rgba(0, 0, 0, 0.1) 0rem 1.25rem 1.6875rem 0rem;
-		border: 1px solid var(--color-black);
 	}
 
 	&-section1 {
@@ -273,12 +278,28 @@ body {
 	width: 50%;
 	border-top: 1px solid var(--gray);
 	border-right: 1px solid var(--gray);
+
+	&:hover {
+		background-color: #fecaca;
+	}
+
+	&-active {
+		background-color: #fecaca;
+	}
 }
 
 .cart {
 	color: var(--color-black);
 	width: 50%;
 	border-top: 1px solid var(--gray);
+
+	&:hover {
+		background-color: #bae6fd;
+	}
+
+	&-active {
+		background-color: #bae6fd;
+	}
 }
 
 .deals {
@@ -317,4 +338,12 @@ body {
 
 .btn-sign {
 	background-color: var(--color-brand-dark);
+}
+
+.wishlist-icon {
+	color: red;
+}
+
+.cart-icon {
+	color: royalblue;
 }

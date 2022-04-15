@@ -1,17 +1,11 @@
-import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../state/contexts';
-import { addToCart, addToWishlist } from '../../state/requests';
+import { addToCart, fetchWishlist, removeFromWishlist } from '../../state/requests';
 import { FontAwesomeIcon } from './fontAwesomeIcon';
 
-export const ProductCard = (props) => {
+export const ProductCardWishlist = (props) => {
 	const { _id, name, description, image, brandName, mrp, currentPrice, ratings } = props.product;
 
-	const navigate = useNavigate();
-
-	const {
-		authState: { wishlist, cart },
-		authDispatch
-	} = useAuthContext();
+	const { authDispatch } = useAuthContext();
 
 	const splitInBullets = (description) => {
 		const split = description.split(',');
@@ -20,14 +14,6 @@ export const ProductCard = (props) => {
 				&bull; {desc}
 			</div>
 		));
-	};
-
-	const handleWishlist = (productId) => {
-		addToWishlist(productId, authDispatch);
-	};
-
-	const handleCart = (productId) => {
-		addToCart(productId, authDispatch);
 	};
 
 	return (
@@ -66,34 +52,26 @@ export const ProductCard = (props) => {
 				{splitInBullets(description)}
 			</div>
 			<div className='tags tags-bottom flex-row'>
-				{wishlist.includes(_id) ? (
-					<div
-						className='wish wish-active flex-j-a-center cursor'
-						onClick={() => navigate('/wishlist')}
-					>
-						Go to Wish
-					</div>
-				) : (
-					<div
-						className='wish flex-j-a-center cursor'
-						onClick={() => handleWishlist(_id)}
-					>
-						Add to Wish
-					</div>
-				)}
+				<div
+					className='wish wish-active flex-j-a-center cursor'
+					onClick={() => {
+						removeFromWishlist(_id, authDispatch);
+						fetchWishlist(authDispatch);
+					}}
+				>
+					Remove
+				</div>
 
-				{cart.includes(_id) ? (
-					<div
-						className='cart cart-active flex-j-a-center cursor'
-						onClick={() => navigate('/cart')}
-					>
-						Go to Cart
-					</div>
-				) : (
-					<div className='cart flex-j-a-center cursor' onClick={() => handleCart(_id)}>
-						Add to Cart
-					</div>
-				)}
+				<div
+					className='cart flex-j-a-center cursor'
+					onClick={() => {
+						removeFromWishlist(_id, authDispatch);
+						fetchWishlist(authDispatch);
+						addToCart(_id, authDispatch);
+					}}
+				>
+					Move to Cart
+				</div>
 			</div>
 			<div className='tags tags-top flex-row'>
 				<div className='deals flex-j-a-center'>Hot This Week 😍</div>

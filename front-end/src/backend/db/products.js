@@ -7,7 +7,7 @@ import { v4 as uuid } from 'uuid';
 
 export const products = [
 	{
-		_id: uuid(),
+		_id: 1,
 		name: 'iPhone 13 Mini (Blue, 128 GB)',
 		description:
 			'13.72 cm (5.4 inch) Super Retina XDR Display, 12MP + 12MP | 12MP Front Camera, A15 Bionic Chip Processor',
@@ -21,7 +21,7 @@ export const products = [
 		deals: 'Hot This Week 😍'
 	},
 	{
-		_id: uuid(),
+		_id: 2,
 		name: 'iPhone 13 (Blue, 128 GB)',
 		description:
 			'15.49 cm (6.1 inch) Super Retina XDR Display, 12MP + 12MP | 12MP Front Camera, A15 Bionic Chip Processor',
@@ -35,7 +35,7 @@ export const products = [
 		deals: 'Hot This Week 😍'
 	},
 	{
-		_id: uuid(),
+		_id: 3,
 		name: 'iPhone 12 Mini (Blue, 64 GB)',
 		description:
 			'13.72 cm (5.4 inch) Super Retina XDR Display, 12MP + 12MP | 12MP Front Camera, A14 Bionic Chip with Next Generation Neural Engine Processor',
@@ -49,7 +49,7 @@ export const products = [
 		deals: 'Hot This Week 😍'
 	},
 	{
-		_id: uuid(),
+		_id: 4,
 		name: 'iPhone 12 (Black, 64 GB)',
 		description:
 			'15.49 cm (6.1 inch) Super Retina XDR Display, 12MP + 12MP | 12MP Front Camera, A14 Bionic Chip with Next Generation Neural Engine Processor',
@@ -63,7 +63,7 @@ export const products = [
 		deals: 'Hot This Week 😍'
 	},
 	{
-		_id: uuid(),
+		_id: 5,
 		name: 'Galaxy Note 20 Ultra 5G (Mystic Black, 256 GB) (12 GB RAM)',
 		description:
 			'17.53 cm (6.9 inch) Quad HD+ Display, 108MP + 12MP + 12MP | 10MP Front Camera, Exynos Octa Core Processor',
