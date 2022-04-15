@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from './fontAwesomeIcon';
 import { useNavigate } from 'react-router-dom';
 
-export const ListItem = ({ iconStyle, containerStyle, itemName, pathName = '#' }) => {
+export const ListItem = ({ iconStyle, itemName, containerStyle = '', pathName = '#' }) => {
 	const navigate = useNavigate();
 
 	return (
@@ -10,7 +10,7 @@ export const ListItem = ({ iconStyle, containerStyle, itemName, pathName = '#' }
 			onClick={() => navigate(`${pathName}`)}
 		>
 			<FontAwesomeIcon iconStyle={iconStyle} />
-			<span>{itemName}</span>
+			<span className={`${itemName && 'mr-4'}`}>{itemName}</span>
 		</div>
 	);
 };

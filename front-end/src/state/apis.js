@@ -1,4 +1,4 @@
-const baseUrl = 'api';
+const baseUrl = '/api';
 
 export const productsApi = {
 	GET: {
@@ -36,5 +36,17 @@ export const cartApi = {
 	},
 	DELETE: {
 		deleteProductFromCart: `${baseUrl}/user/cart/:productId`
+	}
+};
+
+export const loginApi = {
+	POST: {
+		loginUser: `${baseUrl}/auth/login`
+	}
+};
+
+export const signupApi = {
+	POST: {
+		registerUser: `${baseUrl}/auth/signup`
 	}
 };
